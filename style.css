@@ -1,0 +1,141 @@
+body {
+    margin: 0px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #529fe7;
+}
+
+.calculadora-container{
+    border: 4px solid #000000;
+    border-radius: 10px;
+    padding: 0;
+    width: 375px;
+    background-color: rgb(11, 14, 27);
+}
+
+.first-container {
+    background-color: #fcfcfc; /* Tu color azul */
+    padding: 5px 20px 20px 20px; /* El espacio ahora vive aquí adentro */
+}
+
+.pantalla{
+    width: 100%;
+    height: 60px;
+    background-color: rgb(197, 185, 183);
+    border: 2px solid #000000;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 15px;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+    font-weight: bold;
+    box-shadow: inset 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+.marca{
+    margin: 0;
+    border-bottom: 3px solid #000000;
+    background-color: #fcfcfc;
+    padding: 5px 12px 5px 0px;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: right;
+    letter-spacing: 0.5px;
+}
+.botones {
+    display: grid;
+    /* Esto obliga a que las columnas se repartan el 100% del espacio 
+       restando los huecos del gap */
+    grid-template-columns: repeat(4, minmax(0, 1fr)); 
+    column-gap: 4px; 
+    row-gap: 7px;
+    padding: 12px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.botones button {
+    width: 100%;
+    height: 50px;
+    cursor: pointer;
+    font-size: 25px;
+    border-radius: 5px;
+    border: 2px solid black;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.btn-igual {
+    grid-column: span 2;
+    background-color: #ff9500; /* Color naranja tipo iPhone */
+    color: white;
+    border: 2px solid black;
+}
+input {
+    width: 80%;
+    padding: 5px;
+    margin: 5px;
+}
+
+.botones-estilo-nuevo {
+    width: 100%;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 3px solid #e50000; /* Borde rojo oscuro */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    
+    /* EL COLOR ROJO ESTÁ AQUÍ */
+    background: #ff0000; 
+    
+    /* Sombras neumórficas para que parezca que "sale" de la calculadora */
+    box-shadow:
+        inset 6px 6px 10px rgba(255, 255, 255, 0.4), /* Brillo interno */
+        inset -6px -6px 10px rgba(0, 0, 0, 0.3),     /* Sombra interna */
+        2px 2px 10px rgba(0, 0, 0, 0.3);             /* Sombra proyectada */
+    
+    transition: all 0.3s ease;
+}
+
+.botones-estilo-nuevo span {
+    font-family: Arial, sans-serif;
+    font-weight: 900;
+    font-size: 24px;
+    
+    /* El color del texto (un rojo muy oscuro o blanco queda bien) */
+    color: #5b0000; 
+    
+    display: inline-block;
+    transition: transform 0.3s ease-out;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.3);
+}
+
+/* --- EFECTOS AL PASAR EL MOUSE --- */
+.botones-estilo-nuevo:hover {
+    background: #ff2b2b; /* Un rojo más brillante al tocarlo */
+}
+
+.botones-estilo-nuevo:hover span {
+    transform: translateY(-7px); /* El salto del número */
+}
+
+/* --- EFECTO AL HACER CLIC (HUNDIDO) --- */
+.botones-estilo-nuevo:active {
+    box-shadow:
+        inset 4px 4px 8px rgba(0, 0, 0, 0.4),
+        inset -4px -4px 8px rgba(255, 255, 255, 0.2);
+    transform: scale(0.96); /* Se achica un poquito */
+}
