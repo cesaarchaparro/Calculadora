@@ -9,9 +9,8 @@
   <div class="calculadora-container">
     <p class="marca">CASIO FX-991</p>
     <div class="first-container">
-      <div id="pantalla" class="pantalla">
-        0
-      </div>
+      <div id="expresion" class="expresion">0</div>
+      <div id="pantalla" class="pantalla">0</div>
     </div>
   <div class="botones">
     <button onclick="agregar('1')">1</button>
@@ -27,11 +26,13 @@
 
     <button onclick="agregar('+')">+</button>
     <button onclick="agregar('-')">-</button>
-    <button onclick="agregar('*')">*</button>
+    <button onclick="agregar('*')">×</button>
+    <button onclick="agregarDecimal()">.</button>
 
-    <button class="botones-estilo-nuevo" onclick="limpiar()">
-      <span>C</span>
-    </button>
+    <button class="botones-estilo-nuevo" onclick="limpiar()"><span>C</span></button>
+    <button class="btn-backspace" onclick="borrarUltimo()">⌫</button>
+    <button class="btn-op" onclick="agregar('%')">%</button>
+    <button class="btn-op" onclick="agregar('/')">÷</button>
 
     <button class= "btn-igual" onclick="calcular()">=</button>
 
@@ -40,4 +41,4 @@
     <script src="script.js"></script>
   </div>
 </body>
-</html>
+</html>>
